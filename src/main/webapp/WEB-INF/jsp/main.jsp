@@ -16,10 +16,10 @@
 
         <title>Developer Jobs</title>
         
-        <script src="${home}webjars/jquery/3.2.0/jquery.min.js"></script>
-        <script src="${home}webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link  href="${home}webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-        <link  href="${home}webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" />
+        <script src="${home}webjars/jquery/jquery.min.js"></script>
+        <script src="${home}webjars/bootstrap/js/bootstrap.min.js"></script>
+        <link  href="${home}webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link  href="${home}webjars/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
     </head>
 
     <body style="overflow-y: scroll; margin-bottom: 35px; background-image: url(<c:url value="/img/background.png" />);">
