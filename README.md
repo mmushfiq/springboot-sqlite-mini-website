@@ -1,5 +1,6 @@
 # springboot-sqlite-mini-website
 
+<br/>
 
 ### Used technologies:
 * Spring Boot
@@ -39,4 +40,4 @@ Screen 4.<br/>
 <br/>
 <br/>
 Screen 5.<br/>
-![developer-jobs-3](http://www.mycertnotes.com/wp-content/uploads/2018/05/developer-jobs-original-3.jpg)
+![developer-jobs-3](https://image.ibb.co/jbRGMT/developer_jobs_3.jpg)
