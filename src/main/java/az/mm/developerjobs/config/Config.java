@@ -1,8 +1,6 @@
 
 package az.mm.developerjobs.config;
 
-import javax.sql.DataSource;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
@@ -22,6 +20,10 @@ public class Config {
         return messageSource;
     }
     
+    
+/*
+    //This config is added into application.properties file
+    
     @Bean
     public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
@@ -29,4 +31,6 @@ public class Config {
         dataSourceBuilder.url("jdbc:sqlite:D:\\developer_jobs.sqlite");
         return dataSourceBuilder.build();
     }
+*/
+    
 }
