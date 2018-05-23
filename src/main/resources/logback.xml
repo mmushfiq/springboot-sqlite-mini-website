@@ -1,6 +1,4 @@
 <configuration>
-    <timestamp key="byDay" datePattern="yyyyMMddHHmmss"/>
-    <timestamp key="byDay" datePattern="yyyyMMdd"/>
     
     <property name="APP_LOG_PATH" value="${catalina.home}/log/developerjobs"/>
   
@@ -33,7 +31,7 @@
         </encoder>
     </appender>
 
-
+<!-- 1st way
     <appender name="GENERAL_ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${APP_LOG_PATH}/general.log</file>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -53,6 +51,29 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
         </encoder>
     </appender>
+-->
+    
+    <!-- 2nd way - HTML format for a nice preview and daily rollover -->
+    <appender name="GENERAL_ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_PATH}/general.html</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${APP_LOG_PATH}/general.%d{yyyy-MM-dd}.%i.html</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 50MB -->
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <charset>UTF-8</charset>
+            <layout class="ch.qos.logback.classic.html.HTMLLayout">
+                <!--<pattern>%d{HH:mm:ss.SSS}%thread%level%logger%line%msg</pattern>-->   <!-- you can modify it -->
+                <pattern>%d{HH:mm:ss.SSS}%thread%logger{35}%msg</pattern>
+            </layout>         
+        </encoder>
+    </appender> 
   
     <root level="INFO">
         <appender-ref ref="GENERAL_ROLLING_FILE" />
