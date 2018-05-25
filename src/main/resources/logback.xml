@@ -60,8 +60,8 @@
             <!-- daily rollover -->
             <fileNamePattern>${APP_LOG_PATH}/general.%d{yyyy-MM-dd}.%i.html</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- or whenever the file size reaches 50MB -->
-                <maxFileSize>50MB</maxFileSize>
+                <!-- or whenever the file size reaches 10MB -->
+                <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
             <!-- keep 30 days' worth of history -->
             <maxHistory>30</maxHistory>
@@ -69,8 +69,7 @@
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <charset>UTF-8</charset>
             <layout class="ch.qos.logback.classic.html.HTMLLayout">
-                <!--<pattern>%d{HH:mm:ss.SSS}%thread%level%logger%line%msg</pattern>-->   <!-- you can modify it -->
-                <pattern>%d{HH:mm:ss.SSS}%thread%logger{35}%msg</pattern>
+                <pattern>%d{HH:mm:ss.SSS}%thread%level%logger%line%msg</pattern>   <!-- you can modify it -->
             </layout>         
         </encoder>
     </appender> 
